@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Mars News</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron text-center">
+                    <h1>Mission to Mars</h1>
+                    <p><a class="btn btn-danger btn-lg" href="/scrape" role="button">Get the latest data!</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Latest Mars News:</h2>
+                <h5><a href="{{ mars.latest_article_link }}"><strong>{{ mars.latest_article_title }}</strong></a></h5>
+                <p>{{ mars.latest_article_teaser }}</p>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <h2>Featured Image</h2>
+                <a href="{{ mars.featured_image }}"><img class="img-fluid" src="{{ mars.featured_image }}"
+                        alt="Featured Image"></a>
+            </div>
+            <div class="col-lg-4">
+                <br>
+                <br>
+                <div class="table-hover">
+                    {{ mars.facts_table | safe }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <br>
+                <h1>Mars Hemispheres</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <figure class="figure"></figure>
+                <a href="{{ mars.hemisphere_images[0]['img_url']}}"><img src="{{ mars.hemisphere_images[0]['img_url']}}"
+                        class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_images[0]['title']}}"></a>
+                <h2 class="text-center">{{ mars.hemisphere_images[0]['title']}}</h2>
+                </figure>
+            </div>
+            <div class="col-lg-6">
+                <figure class="figure"></figure>
+                <a href="{{ mars.hemisphere_images[1]['img_url']}}"><img src="{{ mars.hemisphere_images[1]['img_url']}}"
+                        class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_images[1]['title']}}"></a>
+                <h2 class="text-center">{{ mars.hemisphere_images[1]['title']}}</h2>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <figure class="figure"></figure>
+                <a href="{{ mars.hemisphere_images[2]['img_url']}}"><img src="{{ mars.hemisphere_images[2]['img_url']}}"
+                        class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_images[2]['title']}}"></a>
+                <h2 class="text-center">{{ mars.hemisphere_images[2]['title']}}</h2>
+                </figure>
+            </div>
+            <div class="col-lg-6">
+                <figure class="figure"></figure>
+                <a href="{{ mars.hemisphere_images[3]['img_url']}}"><img src="{{ mars.hemisphere_images[3]['img_url']}}"
+                        class="figure-img img-fluid rounded" alt="{{ mars.hemisphere_images[3]['title']}}"></a>
+                <h2 class="text-center">{{ mars.hemisphere_images[3]['title']}}</h2>
+                </figure>
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
