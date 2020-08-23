@@ -4,7 +4,6 @@ from splinter.exceptions import ElementDoesNotExist
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
-from flask import Markup
 
 
 def init_browser():
@@ -102,7 +101,7 @@ def scrape():
 
     # Convert the data to a HTML table string and remove the index
     html_facts_table = facts_table.to_html(index=False)
-    html_facts_table = Markup(html_facts_table)
+    html_facts_table = html_facts_table
 
     ''' ---------------- '''
     ''' MARS HEMISPHERES '''
