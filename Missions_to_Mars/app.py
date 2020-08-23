@@ -25,6 +25,7 @@ def index():
 @app.route("/scrape")
 def scrape():
 
+    # Set the path for the database
     mars_data_db = mongo.db.mars_data_db
 
     # Call the scrape function from scrape_mars.py
